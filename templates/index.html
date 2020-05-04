@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <body>
+        <from action="/" method="post">
+            <input placeholder="Name" name="name">
+            <input placeholder="Content" name="posts">
+            <input type="submit" value="Submit">
+
+
+        </from>
+        <!-- here you can write python script -->
+        { % for post in posts % }
+        <div> {{ post [1] + " : " + post [2] }} </div>
+        { % endfor % }
+        
+     
+    </body>
+</html>     
