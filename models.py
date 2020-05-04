@@ -9,7 +9,7 @@ def create_post(name, content):
     con = sql.connect(path.join(ROOT, "nameer.db"))
     # create a cusor: Which allow us to grab only the information we need and not the whole database
     cur = con.cursor()
-    cur.execute("insert into post(name, content) values(?, ?)", (name,content))
+    cur.execute("insert into posts(name, content) values(?, ?)", (name,content))
     con.commit()
     con.close()
 
@@ -20,6 +20,8 @@ def get_posts():
     cur = con.cursor()
     cur.execute('select * from posts')
     posts = cur.fetchall()
+    con.commit()
+    con.close()
     return posts
 
 

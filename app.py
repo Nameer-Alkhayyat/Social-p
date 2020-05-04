@@ -14,12 +14,11 @@ CORS(app)
 #make a request to send or recive data!
 @app.route("/", methods= ["GET", "POST"])
 def index(): 
-    posts = get_posts()
-    print(posts)
-#when the user request infon from our db or website
+    
+
+    #when the user request infon from our db or website
     if request.method == "GET":
-        #return render_template("index.html", posts=posts)
-        pass   
+        posts = get_posts()   
     
 
     #when the user is sending data back to the server or db
@@ -27,7 +26,8 @@ def index():
         name=request.form.get("name")
         post=request.form.get("post")
         create_post(name, post)
-    posts = get_posts
+        posts = get_posts()
+
     return render_template("index.html", posts=posts)
 
 

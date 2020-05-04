@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
     <body>
-        <from action="/" method="post">
+        <form action="http://localhost:5000/" method="post">
             <input placeholder="Name" name="name">
-            <input placeholder="Content" name="posts">
+            <input placeholder="Content" name="post">
             <input type="submit" value="Submit">
 
 
-        </from>
+        </form>
         <!-- here you can write python script -->
-        { % for post in posts % }
-        <div> {{ post [1] + " : " + post [2] }} </div>
-        { % endfor % }
+        {% for post in posts %}
+        <div> {{ post[1] + " : " + post[2] }} </div>
+        {% endfor %}
         
      
     </body>
